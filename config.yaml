@@ -19,14 +19,13 @@ minimum_support: 0.9              # 90% of actuator changes must be explained
 
 # === ACTUATORS TO ANALYZE (add as many as you want) ===
 actuators:
-  - name: "P-101"                 # pump, valve, etc.
-    command_tag: "pump_P101_cmd"  # 0/1 digital command
+  - name: "P-101"
+    command_tag: "pump_P101_cmd"
     relevant_tags:
       - "level_LIT101"
-      - "pressure_PIT101"
-      - "flow_FIT101"
-  - name: "XV-201"
-    command_tag: "valve_XV201_cmd"
+      - "inflow_FIT101"
+      - "outflow_FIT102"
+  - name: "P-102"
+    command_tag: "pump_P102_cmd"
     relevant_tags:
-      - "temperature_TIT201"
-      - "pressure_PIT201"
+      - "level_LIT101"
