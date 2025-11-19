@@ -1,0 +1,32 @@
+# === DATABASE CONNECTION ===
+database: "influxdb"          # "influxdb" or "timescaledb"
+influxdb:
+  url: "http://localhost:8086"
+  token: "your-token-here"
+  org: "your-org"
+  bucket: "plant"
+timescaledb:
+  host: "localhost"
+  port: 5432
+  user: "postgres"
+  password: "your-password"
+  database: "plant"
+
+# === ANALYSIS SETTINGS ===
+resample_interval: "10s"          # 10-second aligned data
+history_days: 180                 # how many days of history to analyze
+minimum_support: 0.9              # 90% of actuator changes must be explained
+
+# === ACTUATORS TO ANALYZE (add as many as you want) ===
+actuators:
+  - name: "P-101"                 # pump, valve, etc.
+    command_tag: "pump_P101_cmd"  # 0/1 digital command
+    relevant_tags:
+      - "level_LIT101"
+      - "pressure_PIT101"
+      - "flow_FIT101"
+  - name: "XV-201"
+    command_tag: "valve_XV201_cmd"
+    relevant_tags:
+      - "temperature_TIT201"
+      - "pressure_PIT201"
