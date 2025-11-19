@@ -1,0 +1,11 @@
+pandas==2.2.2
+numpy==2.1.1
+influxdb-client==1.41.0
+psycopg2-binary==2.9.9
+tsfresh==0.20.2
+scikit-learn==1.5.1
+xgboost==2.1.1
+pyarrow==17.0.0
+streamlit==1.38.0
+ollama==0.3.3
+pyyaml==6.0.2
